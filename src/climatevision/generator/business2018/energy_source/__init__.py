@@ -41,43 +41,43 @@ def calc_supply(
     gas = EnergyWithCO2ePerMWhAndCostFuel(
         energy=energies.gas.energy,
         cost_fuel_per_MWh=fact("Fact_R_S_gas_energy_cost_factor_2018"),
-        CO2e_combustion_based_per_MWh=fact("Fact_H_P_ngas_cb_EF"),
+        CO2e_combustion_based_per_MWh=fact("Fact_RB_S_gas_ratio_CO2e_to_fec"),
     )
 
     lpg = EnergyWithCO2ePerMWhAndCostFuel(
         energy=energies.lpg.energy,
         cost_fuel_per_MWh=fact("Fact_R_S_lpg_energy_cost_factor_2018"),
-        CO2e_combustion_based_per_MWh=fact("Fact_H_P_LPG_cb_EF"),
+        CO2e_combustion_based_per_MWh=fact("Fact_RB_S_LPG_ratio_CO2e_to_fec"),
     )
 
     petrol = EnergyWithCO2ePerMWhAndCostFuel(
         energy=energies.petrol.energy,
         cost_fuel_per_MWh=fact("Fact_R_S_petrol_energy_cost_factor_2018"),
-        CO2e_combustion_based_per_MWh=fact("Fact_H_P_petrol_cb_EF"),
+        CO2e_combustion_based_per_MWh=fact("Fact_RB_S_petrol_ratio_CO2e_to_fec"),
     )
 
     jetfuel = EnergyWithCO2ePerMWhAndCostFuel(
         energy=energies.jetfuel.energy,
         cost_fuel_per_MWh=fact("Fact_R_S_kerosine_energy_cost_factor_2018"),
-        CO2e_combustion_based_per_MWh=fact("Fact_H_P_kerosene_cb_EF"),
+        CO2e_combustion_based_per_MWh=fact("Fact_RB_S_jetfuel_ratio_CO2e_to_fec"),
     )
 
     diesel = EnergyWithCO2ePerMWhAndCostFuel(
         energy=energies.diesel.energy,
         cost_fuel_per_MWh=fact("Fact_R_S_fueloil_energy_cost_factor_2018"),
-        CO2e_combustion_based_per_MWh=fact("Fact_H_P_fueloil_cb_EF"),
+        CO2e_combustion_based_per_MWh=fact("Fact_RB_S_fueloil_ratio_CO2e_to_fec"),
     )
 
     fueloil = EnergyWithCO2ePerMWhAndCostFuel(
         energy=energies.fueloil.energy,
         cost_fuel_per_MWh=fact("Fact_R_S_fueloil_energy_cost_factor_2018"),
-        CO2e_combustion_based_per_MWh=fact("Fact_H_P_fueloil_cb_EF"),
+        CO2e_combustion_based_per_MWh=fact("Fact_RB_S_fueloil_ratio_CO2e_to_fec"),
     )
 
     coal = EnergyWithCO2ePerMWhAndCostFuel(
         energy=energies.coal.energy,
         cost_fuel_per_MWh=fact("Fact_R_S_coal_energy_cost_factor_2018"),
-        CO2e_combustion_based_per_MWh=fact("Fact_R_S_coal_CO2e_EF"),
+        CO2e_combustion_based_per_MWh=fact("Fact_RB_S_coal_ratio_CO2e_to_fec"),
     )
 
     heatnet = EnergyWithCO2ePerMWhAndCostFuel(
@@ -121,7 +121,7 @@ def calc_supply(
     biomass = EnergyWithCO2ePerMWhAndCostFuelAndBuildings(
         energy=energies.biomass.energy,
         cost_fuel_per_MWh=fact("Fact_R_S_wood_energy_cost_factor_2018"),
-        CO2e_combustion_based_per_MWh=fact("Fact_RB_S_biomass_CO2e_EF"),
+        CO2e_combustion_based_per_MWh=fact("Fact_RB_S_biomass_ratio_CO2e_to_fec"),
         number_of_buildings=energies.biomass.energy * building_energy_ratio,
     )
 

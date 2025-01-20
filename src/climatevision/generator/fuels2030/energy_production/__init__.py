@@ -101,9 +101,9 @@ def calc_production(
         + i30.p.demand_emethan
         + a30.p_operation.demand_emethan,
         CO2e_emission_factor=fact("Fact_T_S_methan_EmFa_tank_wheel_2018"),
-        invest_per_power=ass("Ass_S_methan_invest_per_power"),
-        full_load_hour=ass("Ass_S_power_to_x_full_load_hours2"),
-        fuel_efficiency=ass("Ass_S_methan_efficiency"),
+        invest_per_power=ass("Ass_F_P_methan_invest_per_power"),
+        full_load_hour=ass("Ass_F_P_power_to_x_full_load_hours2"),
+        fuel_efficiency=ass("Ass_F_P_methan_efficiency"),
     )
     hydrogen = NewEFuelProduction.calc(
         facts=facts,
@@ -112,7 +112,7 @@ def calc_production(
         duration_until_target_year=duration_until_target_year,
         energy=i30.p.demand_hydrogen + t30.t.transport.demand_hydrogen,
         CO2e_emission_factor=0,
-        invest_per_power=ass("Ass_S_electrolyses_invest_per_power"),
+        invest_per_power=ass("Ass_F_P_electrolyses_invest_per_power"),
         full_load_hour=ass("Ass_F_P_electrolysis_full_load_hours"),
         fuel_efficiency=ass("Ass_F_P_electrolysis_efficiency"),
     )
@@ -140,7 +140,7 @@ def calc_production(
             / ass("Ass_E_P_renew_reverse_gud_efficiency")
         ),
         CO2e_emission_factor=0,
-        invest_per_power=ass("Ass_S_electrolyses_invest_per_power"),
+        invest_per_power=ass("Ass_F_P_electrolyses_invest_per_power"),
         full_load_hour=ass("Ass_F_P_electrolysis_full_load_hours"),
         fuel_efficiency=ass("Ass_F_P_electrolysis_efficiency"),
     )

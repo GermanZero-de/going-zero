@@ -16,7 +16,7 @@ def calculate_derived_assumptions(rd: refdata.RefData):
     a.add_derived_assumption(
         "Ass_E_P_constr_elec_ratio_wage_to_emplo_2017",
         f.fact("Fact_B_P_install_elec_wage_2018")
-        / f.fact("Fact_B_P_install_elec_emplo_2017"),
+        / f.fact("Fact_B_P_install_elec_emplo_2018"),
         {
             "NOTE": "",
             "group": "ud",
@@ -123,7 +123,7 @@ def calculate_derived_assumptions(rd: refdata.RefData):
     a.add_derived_assumption(
         "Ass_I_P_miner_cement_prodvol_change",
         a.ass("Ass_I_P_miner_cement_prodvol_2050")
-        / f.fact("Fact_I_P_miner_cement_prodvol_2017")
+        / f.fact("Fact_I_P_miner_cement_prodvol_2018")
         - 1,
         {
             "NOTE": "",
@@ -288,14 +288,14 @@ def calculate_derived_assumptions(rd: refdata.RefData):
     a.add_derived_assumption(
         "Ass_I_P_other_food_prodvol_change",
         a.ass("Ass_I_P_other_food_prodvol_2050")
-        / f.fact("Fact_I_P_other_food_prodvol_2015")
+        / f.fact("Fact_I_P_other_food_prodvol_2018")
         - 1,
         {
             "NOTE": "",
             "group": "ud",
             "description": "food industry production volume change total until 2050",
             "unit": "%",
-            "rationale": "Division von Ass_I_P_other_food_prodvol_2050/Fact_I_P_other_food_prodvol_2015 und dann -1",
+            "rationale": "Division von Ass_I_P_other_food_prodvol_2050/Fact_I_P_other_food_prodvol_2018 und dann -1",
             "reference": "UBA RESCUE S. 276, ThÃ¼nen 2019 S.61",
             "link": "https://www.umweltbundesamt.de/sites/default/files/medien/1410/publikationen/rescue_studie_cc_36-2019_wege_in_eine_ressourcenschonende_treibhausgasneutralitaet_auflage2_juni-2021.pdf",
         },
@@ -303,7 +303,7 @@ def calculate_derived_assumptions(rd: refdata.RefData):
     a.add_derived_assumption(
         "Ass_I_P_other_further_fec_change",
         a.ass("Ass_I_P_other_further_fec_2050")
-        / f.fact("Fact_I_P_other_further_fec_2018")
+        / f.fact("Fact_I_S_other_further_fec_2018")
         - 1,
         {
             "NOTE": "",
@@ -409,7 +409,7 @@ def calculate_derived_assumptions(rd: refdata.RefData):
         },
     )
     a.add_derived_assumption(
-        "Ass_T_C_cost_per_trnsprt_rail_train station",
+        "Ass_T_C_cost_per_trnsprt_rail_train_station",
         a.ass("Ass_T_C_additional_invest_train_station")
         / f.fact("Fact_M_population_germany_refyear"),
         {
@@ -626,14 +626,14 @@ def calculate_derived_assumptions(rd: refdata.RefData):
     )
     a.add_derived_assumption(
         "Ass_L_G_forest_conv_area_2050",
-        f.fact("Fact_L_forest_conv_2018")
+        f.fact("Fact_L_G_forest_conv_2018")
         * (1 + a.ass("Ass_L_G_forest_conv_pct_change")),
         {
             "NOTE": "",
             "group": "ui",
             "description": "WaldflÃ¤che herkÃ¶mmlich bewirtschaftet 2050",
             "unit": "ha",
-            "rationale": "Berechnung =Fact_L_forest_conv_2018*(1+Ass_L_G_forest_conv_pct_change)",
+            "rationale": "Berechnung =Fact_L_G_forest_conv_2018*(1+Ass_L_G_forest_conv_pct_change)",
             "reference": "Berechnung",
             "link": "",
         },

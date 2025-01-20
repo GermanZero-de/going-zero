@@ -424,7 +424,7 @@ def calc(
         "Fact_E_P_climate_neutral_ratio_CO2e_cb_to_fec"
     )
     p_local_pv.emplo_existing = (
-        fact("Fact_B_P_install_elec_emplo_2017")
+        fact("Fact_B_P_install_elec_emplo_2018")
         * population_commune_2018
         / population_germany_2018
     )
@@ -512,7 +512,7 @@ def calc(
     p_renew.cost_fuel = p_renew_biomass.cost_fuel
 
     p_renew_geoth.emplo_existing = (
-        fact("Fact_E_P_plant_construct_emplo_2018")
+        fact("Fact_E_P_geoth_emplo_2018")
         * p_renew_geoth.demand_emplo
         / (p_renew_geoth.demand_emplo + p_renew_reverse.demand_emplo)
     )

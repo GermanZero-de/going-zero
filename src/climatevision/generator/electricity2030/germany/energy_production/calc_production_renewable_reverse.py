@@ -75,7 +75,7 @@ def calc_production_renewable_reverse(
         p_renew_reverse.cost_wage, p_renew_reverse.ratio_wage_to_emplo
     )
     p_renew_reverse.emplo_existing = (
-        fact("Fact_E_P_plant_construct_emplo_2018")
+        fact("Fact_E_P_geoth_emplo_2018")
         * p_renew_reverse.demand_emplo
         / (p_renew_geoth_demand_emplo + p_renew_reverse.demand_emplo)
     )

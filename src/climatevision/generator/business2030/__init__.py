@@ -118,12 +118,12 @@ def calc(
         * p_nonresi.invest_per_x
     )
     p_nonresi.invest_pa = p_nonresi.invest / duration_until_target_year
-    p_nonresi.pct_of_wage = fact("Fact_B_P_renovations_ratio_wage_to_main_revenue_2017")
+    p_nonresi.pct_of_wage = fact("Fact_B_P_renovations_ratio_wage_to_main_revenue_2018")
     p_nonresi.cost_wage = (
         p_nonresi.invest / duration_until_target_year * p_nonresi.pct_of_wage
     )
     p_nonresi.ratio_wage_to_emplo = fact(
-        "Fact_B_P_renovations_wage_per_person_per_year_2017"
+        "Fact_B_P_renovations_wage_per_person_per_year_2018"
     )
     p_nonresi.demand_emplo = div(p_nonresi.cost_wage, p_nonresi.ratio_wage_to_emplo)
 
@@ -569,10 +569,10 @@ def calc(
     s_heatpump.invest_pa = s_heatpump.invest / duration_until_target_year
 
     s_heatpump.pct_of_wage = fact(
-        "Fact_B_P_renovations_ratio_wage_to_main_revenue_2017"
+        "Fact_B_P_renovations_ratio_wage_to_main_revenue_2018"
     )
     s_heatpump.cost_wage = s_heatpump.invest_pa * s_heatpump.pct_of_wage
-    s_solarth.pct_of_wage = fact("Fact_B_P_renovations_ratio_wage_to_main_revenue_2017")
+    s_solarth.pct_of_wage = fact("Fact_B_P_renovations_ratio_wage_to_main_revenue_2018")
 
     s_solarth.invest = (
         div(
@@ -586,13 +586,17 @@ def calc(
 
     s_solarth.invest_pa = s_solarth.invest / duration_until_target_year
     s_solarth.cost_wage = s_solarth.invest_pa * s_solarth.pct_of_wage
-    s_solarth.ratio_wage_to_emplo = fact("Fact_B_P_heating_wage_per_person_per_year")
+    s_solarth.ratio_wage_to_emplo = fact(
+        "Fact_B_P_heating_wage_per_person_per_year_2018"
+    )
     s_solarth.demand_emplo = div(s_solarth.cost_wage, s_solarth.ratio_wage_to_emplo)
-    s_heatpump.ratio_wage_to_emplo = fact("Fact_B_P_heating_wage_per_person_per_year")
+    s_heatpump.ratio_wage_to_emplo = fact(
+        "Fact_B_P_heating_wage_per_person_per_year_2018"
+    )
     s_heatpump.demand_emplo = div(s_heatpump.cost_wage, s_heatpump.ratio_wage_to_emplo)
 
     s_heatpump.emplo_existing = (
-        fact("Fact_B_P_install_heating_emplo_2017")
+        fact("Fact_B_P_install_heating_emplo_2018")
         * population_commune_2018
         / population_germany_2018
         * ass("Ass_B_D_install_heating_emplo_pct_of_B_heatpump")
@@ -618,7 +622,7 @@ def calc(
     s.CO2e_total = s.CO2e_combustion_based
 
     p_nonresi.emplo_existing = (
-        fact("Fact_B_P_renovation_emplo_2017")
+        fact("Fact_B_P_renovation_emplo_2018")
         * ass("Ass_B_D_renovation_emplo_pct_of_B")
         * population_commune_2018
         / population_germany_2018
@@ -684,7 +688,7 @@ def calc(
         p_vehicles.change_energy_MWh, b18.p_vehicles.energy
     )
     s_solarth.emplo_existing = (
-        fact("Fact_B_P_install_heating_emplo_2017")
+        fact("Fact_B_P_install_heating_emplo_2018")
         * population_commune_2018
         / population_germany_2018
         * ass("Ass_B_D_install_heating_emplo_pct_of_B_solarth")

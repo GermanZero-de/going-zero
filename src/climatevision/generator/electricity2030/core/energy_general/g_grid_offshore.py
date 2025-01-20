@@ -26,7 +26,7 @@ class GGridOffshore(GGridOnshoreOrPV):
         ass = assumptions.ass
 
         invest_per_x = ass("Ass_E_G_grid_offshore_ratio_invest_to_power")
-        pct_of_wage = fact("Fact_B_P_constr_main_revenue_pct_of_wage_2017")
+        pct_of_wage = fact("Fact_B_P_constr_main_revenue_pct_of_wage_2018")
         ratio_wage_to_emplo = fact("Fact_B_P_constr_main_ratio_wage_to_emplo_2017")
 
         invest = 0
@@ -70,7 +70,7 @@ class GGridOffshore(GGridOnshoreOrPV):
         ass = assumptions.ass
 
         invest_per_x = ass("Ass_E_G_grid_offshore_ratio_invest_to_power")
-        pct_of_wage = fact("Fact_B_P_constr_main_revenue_pct_of_wage_2017")
+        pct_of_wage = fact("Fact_B_P_constr_main_revenue_pct_of_wage_2018")
         ratio_wage_to_emplo = fact("Fact_B_P_constr_main_ratio_wage_to_emplo_2017")
 
         invest_outside = 0

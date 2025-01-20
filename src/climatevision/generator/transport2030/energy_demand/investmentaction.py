@@ -64,7 +64,7 @@ class InvestmentAction(InvestCommune):
         fact = facts.fact
         ass = assumptions.ass
 
-        invest_per_x = ass("Ass_T_C_cost_per_trnsprt_rail_train station")
+        invest_per_x = ass("Ass_T_C_cost_per_trnsprt_rail_train_station")
         invest = invest_per_x * population_commune_203X
         invest_com = invest * ass("Ass_T_C_ratio_public_sector_100")
         invest_pa_com = invest_com / duration_until_target_year

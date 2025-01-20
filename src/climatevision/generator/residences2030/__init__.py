@@ -1018,12 +1018,12 @@ def calc(
     s_solarth.invest_pa = s_solarth.invest / duration_until_target_year
     s_heatpump.invest_pa = s_heatpump.invest / duration_until_target_year
 
-    s_solarth.pct_of_wage = fact("Fact_B_P_renovations_ratio_wage_to_main_revenue_2017")
+    s_solarth.pct_of_wage = fact("Fact_B_P_renovations_ratio_wage_to_main_revenue_2018")
     s_heatpump.pct_of_wage = fact(
-        "Fact_B_P_renovations_ratio_wage_to_main_revenue_2017"
+        "Fact_B_P_renovations_ratio_wage_to_main_revenue_2018"
     )
     p_buildings_total.pct_of_wage = fact(
-        "Fact_B_P_renovations_ratio_wage_to_main_revenue_2017"
+        "Fact_B_P_renovations_ratio_wage_to_main_revenue_2018"
     )
 
     s_solarth.cost_wage = s_solarth.invest_pa * s_solarth.pct_of_wage
@@ -1034,10 +1034,14 @@ def calc(
         * p_buildings_total.pct_of_wage
     )
 
-    s_solarth.ratio_wage_to_emplo = fact("Fact_B_P_heating_wage_per_person_per_year")
-    s_heatpump.ratio_wage_to_emplo = fact("Fact_B_P_heating_wage_per_person_per_year")
+    s_solarth.ratio_wage_to_emplo = fact(
+        "Fact_B_P_heating_wage_per_person_per_year_2018"
+    )
+    s_heatpump.ratio_wage_to_emplo = fact(
+        "Fact_B_P_heating_wage_per_person_per_year_2018"
+    )
     p_buildings_total.ratio_wage_to_emplo = fact(
-        "Fact_B_P_renovations_wage_per_person_per_year_2017"
+        "Fact_B_P_renovations_wage_per_person_per_year_2018"
     )
 
     s_solarth.demand_emplo = div(s_solarth.cost_wage, s_solarth.ratio_wage_to_emplo)
@@ -1047,20 +1051,20 @@ def calc(
         p_buildings_total.cost_wage, p_buildings_total.ratio_wage_to_emplo
     )
     s_solarth.emplo_existing = (
-        fact("Fact_B_P_install_heating_emplo_2017")
+        fact("Fact_B_P_install_heating_emplo_2018")
         * population_commune_2018
         / population_germany_2018
         * ass("Ass_B_D_install_heating_emplo_pct_of_R_solarth")
     )
     s_heatpump.emplo_existing = (
-        fact("Fact_B_P_install_heating_emplo_2017")
+        fact("Fact_B_P_install_heating_emplo_2018")
         * population_commune_2018
         / population_germany_2018
         * ass("Ass_B_D_install_heating_emplo_pct_of_R_heatpump")
     )
 
     p_buildings_total.emplo_existing = (
-        fact("Fact_B_P_renovation_emplo_2017")
+        fact("Fact_B_P_renovation_emplo_2018")
         * ass("Ass_B_D_renovation_emplo_pct_of_R")
         * population_commune_2018
         / population_germany_2018

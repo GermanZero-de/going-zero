@@ -46,17 +46,17 @@ class EFuelProduction(Energy, CO2eChange, EnergyChange, Invest):
         # We assume that we take as much CO2e out of the air when the E-Fuel
         # is produced, as we later emit when it is burned.
         CO2e_production_based_per_MWh = -1 * CO2e_emission_factor
-        pct_of_wage = fact("Fact_B_P_constr_main_revenue_pct_of_wage_2017")
+        pct_of_wage = fact("Fact_B_P_constr_main_revenue_pct_of_wage_2018")
         ratio_wage_to_emplo = fact("Fact_B_P_constr_main_ratio_wage_to_emplo_2017")
-        invest_per_x = ass("Ass_S_power_to_x_invest_per_power")
-        full_load_hour = ass("Ass_S_power_to_x_full_load_hours2")
-        demand_electricity = energy / ass("Ass_S_power_to_x_efficiency")
+        invest_per_x = ass("Ass_F_P_power_to_x_invest_per_power")
+        full_load_hour = ass("Ass_F_P_power_to_x_full_load_hours2")
+        demand_electricity = energy / ass("Ass_F_P_power_to_x_efficiency")
         change_energy_MWh = energy - production_2018.energy
         CO2e_production_based = CO2e_production_based_per_MWh * energy
         power_to_be_installed = div(demand_electricity, full_load_hour)
         change_energy_pct = div(change_energy_MWh, production_2018.energy)
         CO2e_total = CO2e_production_based
-        invest = power_to_be_installed * ass("Ass_S_power_to_x_invest_per_power")
+        invest = power_to_be_installed * ass("Ass_F_P_power_to_x_invest_per_power")
         change_CO2e_t = CO2e_total - production_2018.CO2e_total
         cost_climate_saved = (
             (CO2e_total_2021_estimated - CO2e_total)

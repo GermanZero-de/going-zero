@@ -71,14 +71,14 @@ class EnergyChangePOperationHeat(EnergyChangeAgri, Invest):
         )
         self.invest_pa = self.invest / duration_until_target_year
 
-        self.pct_of_wage = fact("Fact_B_P_renovations_ratio_wage_to_main_revenue_2017")
+        self.pct_of_wage = fact("Fact_B_P_renovations_ratio_wage_to_main_revenue_2018")
         self.cost_wage = div(self.invest, duration_until_target_year) * self.pct_of_wage
 
         self.ratio_wage_to_emplo = fact(
-            "Fact_B_P_renovations_wage_per_person_per_year_2017"
+            "Fact_B_P_renovations_wage_per_person_per_year_2018"
         )
         self.emplo_existing = (
-            fact("Fact_B_P_renovation_emplo_2017")
+            fact("Fact_B_P_renovation_emplo_2018")
             * ass("Ass_B_D_renovation_emplo_pct_of_A")
             * population_commune_2018
             / population_germany_2018

@@ -39,7 +39,7 @@ def calc_supply(facts: Facts, energies: Energies) -> EnergySupply:
     )
     fueloil = EnergyWithCO2ePerMWh(
         energy=energies.fueloil.energy,
-        CO2e_combustion_based_per_MWh=fact("Fact_H_P_fueloil_cb_EF"),
+        CO2e_combustion_based_per_MWh=fact("Fact_RB_S_fueloil_ratio_CO2e_to_fec"),
     )
     lpg = EnergyWithCO2ePerMWh(
         energy=energies.lpg.energy,
@@ -47,11 +47,11 @@ def calc_supply(facts: Facts, energies: Energies) -> EnergySupply:
     )
     gas = EnergyWithCO2ePerMWh(
         energy=energies.gas.energy,
-        CO2e_combustion_based_per_MWh=fact("Fact_H_P_ngas_cb_EF"),
+        CO2e_combustion_based_per_MWh=fact("Fact_RB_S_gas_ratio_CO2e_to_fec"),
     )
     biomass = EnergyWithCO2ePerMWh(
         energy=energies.biomass.energy,
-        CO2e_combustion_based_per_MWh=fact("Fact_RB_S_biomass_CO2e_EF"),
+        CO2e_combustion_based_per_MWh=fact("Fact_RB_S_biomass_ratio_CO2e_to_fec"),
     )
     elec = EnergyWithCO2ePerMWh(
         energy=energies.elec.energy,

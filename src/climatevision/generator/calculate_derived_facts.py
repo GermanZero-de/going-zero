@@ -553,9 +553,9 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
 
     f.add_derived_fact(
-        "Fact_B_P_renovations_wage_per_person_per_year_2017",
+        "Fact_B_P_renovations_wage_per_person_per_year_2018",
         f.fact("Fact_B_P_renovation_wage_2018")
-        / f.fact("Fact_B_P_renovation_emplo_2017"),
+        / f.fact("Fact_B_P_renovation_emplo_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -567,9 +567,9 @@ def calculate_derived_facts(rd: refdata.RefData):
         },
     )
     f.add_derived_fact(
-        "Fact_B_P_heating_wage_per_person_per_year",
+        "Fact_B_P_heating_wage_per_person_per_year_2018",
         f.fact("Fact_B_P_install_heating_wage_2018")
-        / f.fact("Fact_B_P_install_heating_emplo_2017"),
+        / f.fact("Fact_B_P_install_heating_emplo_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -583,14 +583,14 @@ def calculate_derived_facts(rd: refdata.RefData):
 
     f.add_derived_fact(
         "Fact_B_P_constr_main_ratio_wage_to_emplo_2017",
-        f.fact("Fact_B_P_constr_main_wage_2017")
-        / f.fact("Fact_B_P_constr_main_emplo_2017"),
+        f.fact("Fact_B_P_constr_main_wage_2018")
+        / f.fact("Fact_B_P_constr_main_emplo_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Personalkosten Bauhauptgewerbe (WZ 41.2, 42, 43.1, 43.9) pro Person und Jahr 2017",
             "unit": "â‚¬",
-            "rationale": "Fact_B_P_constr_main_wage_2017/Fact_B_P_constr_main_emplo_2017",
+            "rationale": "Fact_B_P_constr_main_wage_2018/Fact_B_P_constr_main_emplo_2018",
             "reference": "destatis 2017 Kostenstruktur der Unternehmen im Baugewerbe S. 68ff",
             "link": "https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Bauen/Publikationen/Downloads-Baugewerbe-Struktur/kostenstruktur-baugewerbe-2040530177004.pdf?__blob=publicationFile",
         },
@@ -617,7 +617,7 @@ def calculate_derived_facts(rd: refdata.RefData):
             "group": "ud",
             "description": 'Personalkosten "Sonstiger Tiefbau a.n.g." (WZ 42.99) 2018 pro Person und Jahr 2018',
             "unit": "â‚¬/a",
-            "rationale": "Fact_B_P_constr_main_wage_2017/Fact_B_P_constr_main_emplo_2017",
+            "rationale": "Fact_B_P_constr_main_wage_2018/Fact_B_P_constr_main_emplo_2018",
             "reference": "destatis 2018 Kostenstruktur der Rechtlichen Einheiten im Baugewerbe S.69/75",
             "link": "https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Bauen/Publikationen/Downloads-Baugewerbe-Struktur/kostenstruktur-baugewerbe-2040530187004.pdf?__blob=publicationFile",
         },
@@ -761,7 +761,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_miner_CO2e_cb_2015_2017",
-        f.fact("Fakt_I_P_miner_cement_CO2e_eb_2017")
+        f.fact("Fact_I_P_miner_cement_CO2e_cb_2017")
         + f.fact("Fact_I_P_miner_chalk_CO2e_cb_2016")
         + f.fact("Fact_I_P_miner_ceram_CO2e_cb_2016")
         + f.fact("Fact_I_P_miner_glas_CO2e_cb_2015"),
@@ -777,7 +777,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_miner_fec_pct_of_cement",
-        f.fact("Fact_I_P_miner_cement_fec_2017") / f.fact("Fact_I_P_miner_fec_2018"),
+        f.fact("Fact_I_S_miner_cement_fec_2018") / f.fact("Fact_I_S_miner_fec_2018"),
         {
             "note HS": "nicht mehr benötigt seit KFI Update, oder?",
             "group": "ud",
@@ -790,8 +790,8 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_miner_cement_ratio_prodvol_to_fec",
-        f.fact("Fact_I_P_miner_cement_prodvol_2017")
-        / f.fact("Fact_I_P_miner_cement_fec_2017"),
+        f.fact("Fact_I_P_miner_cement_prodvol_2018")
+        / f.fact("Fact_I_S_miner_cement_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -805,7 +805,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_P_miner_cement_ratio_CO2e_pb_to_prodvol",
         f.fact("Fact_I_P_miner_cement_CO2e_pb_2018")
-        / f.fact("Fact_I_P_miner_cement_prodvol_2017"),
+        / f.fact("Fact_I_P_miner_cement_prodvol_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -818,7 +818,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_miner_fec_pct_of_chalk",
-        f.fact("Fact_I_P_miner_chalk_fec_2017") / f.fact("Fact_I_P_miner_fec_2018"),
+        f.fact("Fact_I_S_miner_chalk_fec_2018") / f.fact("Fact_I_S_miner_fec_2018"),
         {
             "note HS": "nicht mehr benötigt seit KFI Update, oder?",
             "group": "ud",
@@ -832,7 +832,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_P_miner_chalk_ratio_prodvol_to_fec",
         f.fact("Fact_I_P_miner_chalk_prodvol_2018")
-        / f.fact("Fact_I_P_miner_chalk_fec_2017"),
+        / f.fact("Fact_I_S_miner_chalk_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -859,7 +859,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_miner_fec_pct_of_ceram",
-        f.fact("Fact_I_P_miner_ceram_fec_2018") / f.fact("Fact_I_P_miner_fec_2018"),
+        f.fact("Fact_I_S_miner_ceram_fec_2018") / f.fact("Fact_I_S_miner_fec_2018"),
         {
             "note HS": "nicht mehr benötigt seit KFI Update, oder?",
             "group": "ud",
@@ -873,7 +873,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_P_miner_ceram_ratio_prodvol_to_fec",
         f.fact("Fact_I_P_miner_ceram_prodvol_2018")
-        / f.fact("Fact_I_P_miner_ceram_fec_2018"),
+        / f.fact("Fact_I_S_miner_ceram_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -900,7 +900,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_miner_fec_pct_of_glas",
-        f.fact("Fact_I_P_miner_glas_fec_2018") / f.fact("Fact_I_P_miner_fec_2018"),
+        f.fact("Fact_I_S_miner_glas_fec_2018") / f.fact("Fact_I_S_miner_fec_2018"),
         {
             "note HS": "nicht mehr benötigt seit KFI Update, oder?",
             "group": "ud",
@@ -914,7 +914,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_P_miner_glas_ratio_prodvol_to_fec",
         f.fact("Fact_I_P_miner_glas_prodvol_2018")
-        / f.fact("Fact_I_P_miner_glas_fec_2018"),
+        / f.fact("Fact_I_S_miner_glas_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -940,9 +940,9 @@ def calculate_derived_facts(rd: refdata.RefData):
         },
     )
     f.add_derived_fact(
-        "Fact_I_P_metal_steel_primary_CO2e_eb_2018",
-        f.fact("Fact_I_P_metal_steel_primary_CO2e_eb_HKR_2018")
-        + f.fact("Fact_I_P_metal_steel_primary_CO2e_eb_DRI_2018"),
+        "Fact_I_P_metal_steel_primary_CO2e_cb_2018",
+        f.fact("Fact_I_P_metal_steel_primary_CO2e_cb_HKR_2018")
+        + f.fact("Fact_I_P_metal_steel_primary_CO2e_cb_DRI_2018"),
         {
             "note HS": "umbenennen zu Fact_I_P_metal_steel_primary_CO2e_cb_2018",
             "group": "ui",
@@ -1010,7 +1010,7 @@ def calculate_derived_facts(rd: refdata.RefData):
         },
     )
     f.add_derived_fact(
-        "Fakt_I_N_metallh_HKR_EEV_2018",
+        "Fact_I_S_metal_steel_primary_HKR_fec_2018",
         f.fact("Fact_I_P_metal_steel_primary_HKR_prodvol_2018")
         * f.fact("Fact_I_P_metal_steel_primary_HKR_ratio_fec_to_prodvol_2018"),
         {
@@ -1024,7 +1024,7 @@ def calculate_derived_facts(rd: refdata.RefData):
         },
     )
     f.add_derived_fact(
-        "Fakt_I_N_metallh_DRI_EEV_2018",
+        "Fact_I_S_metal_steel_primary_DRI_fec_2018",
         f.fact("Fact_I_P_metal_steel_primary_DRI_prodvol_2018")
         * f.fact("Fact_I_P_metal_steel_primary_DRI_ratio_fec_to_prodvol_2018"),
         {
@@ -1104,7 +1104,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
 
     f.add_derived_fact(
-        "Fakt_I_N_metallh_Sekundaerroute_EEV_2018",
+        "Fact_I_S_metal_steel_secondary_fec_2018",
         f.fact("Fact_I_S_metal_steel_secondary_gas_fec_2018")
         + f.fact("Fact_I_S_metal_steel_secondary_elec_fec_2018"),
         {
@@ -1139,7 +1139,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_P_metal_nonfe_ratio_prodvol_to_fec",
         f.fact("Fact_I_P_metal_nonfe_prodvol_2018")
-        / f.fact("Fact_I_P_metal_nonfe_fec_2018"),
+        / f.fact("Fact_I_S_metal_nonfe_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -1196,13 +1196,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_P_other_paper_ratio_prodvol_to_fec",
         f.fact("Fact_I_P_other_paper_prodvol_2018")
-        / f.fact("Fact_I_P_other_paper_fec_2018"),
+        / f.fact("Fact_I_S_other_paper_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Ratio production volume to FEC paper industry 2018. Berechneter Kehrwert",
             "unit": "t/MWh",
-            "rationale": "Division von Fact_I_P_other_paper_fec_2018/Fact_I_P_other_paper_prodvol_2018",
+            "rationale": "Division von Fact_I_S_other_paper_fec_2018/Fact_I_P_other_paper_prodvol_2018",
             "reference": "Berechnung",
             "link": "",
         },
@@ -1210,27 +1210,27 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_P_other_food_ratio_CO2e_cb_to_prodvol",
         f.fact("Fact_I_P_other_food_CO2e_cb_2015")
-        / f.fact("Fact_I_P_other_food_prodvol_2015"),
+        / f.fact("Fact_I_P_other_food_prodvol_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Ratio cb CO2e to production volume food industry 2018",
             "unit": "",
-            "rationale": "Divsion von Fact_I_P_other_food_CO2e_cb_2018/Fact_I_P_other_food_prodvol_2015",
+            "rationale": "Divsion von Fact_I_P_other_food_CO2e_cb_2018/Fact_I_P_other_food_prodvol_2018",
             "reference": "",
             "link": "",
         },
     )
     f.add_derived_fact(
         "Fact_I_P_other_food_ratio_prodvol_to_fec",
-        f.fact("Fact_I_P_other_food_prodvol_2015")
-        / f.fact("Fact_I_P_other_food_fec_2018"),
+        f.fact("Fact_I_P_other_food_prodvol_2018")
+        / f.fact("Fact_I_S_other_food_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Ratio production volume to FEC food industry 2018. Berechneter Kehrwert",
             "unit": "t/MWh",
-            "rationale": "Division von Fact_I_P_other_food_fec_2018/Fact_I_P_other_food_prodvol_2015",
+            "rationale": "Division von Fact_I_S_other_food_fec_2018/Fact_I_P_other_food_prodvol_2018",
             "reference": "",
             "link": "",
         },
@@ -2163,13 +2163,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_nonfe_fec_pct_of_coal_2018",
         f.fact("Fact_I_S_metal_nonfe_coal_fec_2018")
-        / f.fact("Fact_I_P_metal_nonfe_fec_2018"),
+        / f.fact("Fact_I_S_metal_nonfe_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Kohle an Nichteisenmetalle 2018 (WZ 24.4 24.5)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_metal_nonfe_coal_fec_2018/Fact_I_P_metal_nonfe_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_metal_nonfe_coal_fec_2018/Fact_I_S_metal_nonfe_fec_2018",
             "reference": "AG EB 2018 Zeile 55",
             "link": "",
         },
@@ -2177,13 +2177,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_nonfe_fec_pct_of_diesel_2018",
         f.fact("Fact_I_S_metal_nonfe_diesel_fec_2018")
-        / f.fact("Fact_I_P_metal_nonfe_fec_2018"),
+        / f.fact("Fact_I_S_metal_nonfe_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Diesel an Nichteisenmetalle 2018 (WZ 24.4 24.5)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_metal_nonfe_diesel_fec_2018/Fact_I_P_metal_nonfe_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_metal_nonfe_diesel_fec_2018/Fact_I_S_metal_nonfe_fec_2018",
             "reference": "AG EB 2018 Zeile 55",
             "link": "",
         },
@@ -2191,13 +2191,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_nonfe_fec_pct_of_fueloil_2018",
         f.fact("Fact_I_S_metal_nonfe_fueloil_fec_2018")
-        / f.fact("Fact_I_P_metal_nonfe_fec_2018"),
+        / f.fact("Fact_I_S_metal_nonfe_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV HeizÃ¶l an Nichteisenmetalle 2018 (WZ 24.4 24.5)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_metal_nonfe_fueloil_fec_2018/Fact_I_P_metal_nonfe_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_metal_nonfe_fueloil_fec_2018/Fact_I_S_metal_nonfe_fec_2018",
             "reference": "AG EB 2018 Zeile 55",
             "link": "",
         },
@@ -2205,13 +2205,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_nonfe_fec_pct_of_lpg_2018",
         f.fact("Fact_I_S_metal_nonfe_lpg_fec_2018")
-        / f.fact("Fact_I_P_metal_nonfe_fec_2018"),
+        / f.fact("Fact_I_S_metal_nonfe_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV LPG an Nichteisenmetalle 2018 (WZ 24.4 24.5)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_metal_nonfe_lpg_fec_2018/Fact_I_P_metal_nonfe_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_metal_nonfe_lpg_fec_2018/Fact_I_S_metal_nonfe_fec_2018",
             "reference": "AG EB 2018 Zeile 55",
             "link": "",
         },
@@ -2219,13 +2219,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_nonfe_fec_pct_of_opetpro_2018",
         f.fact("Fact_I_S_metal_nonfe_opetpro_fec_2018")
-        / f.fact("Fact_I_P_metal_nonfe_fec_2018"),
+        / f.fact("Fact_I_S_metal_nonfe_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Sonstige MineralÃ¶lprodukte an Nichteisenmetalle 2018 (WZ 24.4 24.5)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_metal_nonfe_opetpro_fec_2018/Fact_I_P_metal_nonfe_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_metal_nonfe_opetpro_fec_2018/Fact_I_S_metal_nonfe_fec_2018",
             "reference": "AG EB 2018 Zeile 55",
             "link": "",
         },
@@ -2233,13 +2233,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_nonfe_fec_pct_of_gas_2018",
         f.fact("Fact_I_S_metal_nonfe_gas_fec_2018")
-        / f.fact("Fact_I_P_metal_nonfe_fec_2018"),
+        / f.fact("Fact_I_S_metal_nonfe_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Erdgas an Nichteisenmetalle 2018 (WZ 24.4 24.5)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_metal_nonfe_gas_fec_2018/Fact_I_P_metal_nonfe_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_metal_nonfe_gas_fec_2018/Fact_I_S_metal_nonfe_fec_2018",
             "reference": "AG EB 2018 Zeile 55",
             "link": "",
         },
@@ -2247,13 +2247,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_nonfe_fec_pct_of_biomass_2018",
         f.fact("Fact_I_S_metal_nonfe_biomass_fec_2018")
-        / f.fact("Fact_I_P_metal_nonfe_fec_2018"),
+        / f.fact("Fact_I_S_metal_nonfe_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Biomasse an Nichteisenmetalle 2018 (WZ 24.4 24.5)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_metal_nonfe_biomass_fec_2018/Fact_I_P_metal_nonfe_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_metal_nonfe_biomass_fec_2018/Fact_I_S_metal_nonfe_fec_2018",
             "reference": "AG EB 2018 Zeile 55",
             "link": "",
         },
@@ -2261,13 +2261,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_nonfe_fec_pct_of_orenew_2018",
         f.fact("Fact_I_S_metal_nonfe_orenew_fec_2018")
-        / f.fact("Fact_I_P_metal_nonfe_fec_2018"),
+        / f.fact("Fact_I_S_metal_nonfe_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Sonstige EE an Nichteisenmetalle 2018 (WZ 24.4 24.5)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_metal_nonfe_orenew_fec_2018/Fact_I_P_metal_nonfe_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_metal_nonfe_orenew_fec_2018/Fact_I_S_metal_nonfe_fec_2018",
             "reference": "AG EB 2018 Zeile 55",
             "link": "",
         },
@@ -2275,13 +2275,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_nonfe_fec_pct_of_ofossil_2018",
         f.fact("Fact_I_S_metal_nonfe_ofossil_fec_2018")
-        / f.fact("Fact_I_P_metal_nonfe_fec_2018"),
+        / f.fact("Fact_I_S_metal_nonfe_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Sonstige fossile EnergietrÃ¤ger an Nichteisenmetalle 2018 (WZ 24.4 24.5)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_metal_nonfe_ofossil_fec_2018/Fact_I_P_metal_nonfe_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_metal_nonfe_ofossil_fec_2018/Fact_I_S_metal_nonfe_fec_2018",
             "reference": "AG EB 2018 Zeile 55",
             "link": "",
         },
@@ -2289,13 +2289,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_nonfe_fec_pct_of_elec_2018",
         f.fact("Fact_I_S_metal_nonfe_elec_fec_2018")
-        / f.fact("Fact_I_P_metal_nonfe_fec_2018"),
+        / f.fact("Fact_I_S_metal_nonfe_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Strom an Nichteisenmetalle 2018 (WZ 24.4 24.5)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_metal_nonfe_elec_fec_2018/Fact_I_P_metal_nonfe_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_metal_nonfe_elec_fec_2018/Fact_I_S_metal_nonfe_fec_2018",
             "reference": "AG EB 2018 Zeile 55",
             "link": "",
         },
@@ -2303,13 +2303,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_nonfe_fec_pct_of_heatnet_2018",
         f.fact("Fact_I_S_metal_nonfe_heatnet_fec_2018")
-        / f.fact("Fact_I_P_metal_nonfe_fec_2018"),
+        / f.fact("Fact_I_S_metal_nonfe_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV FernwÃ¤rme an Nichteisenmetalle 2018 (WZ 24.4 24.5)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_metal_nonfe_heatnet_fec_2018/Fact_I_P_metal_nonfe_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_metal_nonfe_heatnet_fec_2018/Fact_I_S_metal_nonfe_fec_2018",
             "reference": "AG EB 2018 Zeile 55",
             "link": "",
         },
@@ -2317,13 +2317,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_paper_fec_pct_of_coal_2018",
         f.fact("Fact_I_S_other_paper_coal_fec_2018")
-        / f.fact("Fact_I_P_other_paper_fec_2018"),
+        / f.fact("Fact_I_S_other_paper_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Kohle an Papierindustrie 2018 (WZ 17)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_paper_coal_fec_2018/Fact_I_P_other_paper_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_paper_coal_fec_2018/Fact_I_S_other_paper_fec_2018",
             "reference": "AG EB 2018 Zeile 48",
             "link": "",
         },
@@ -2331,13 +2331,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_paper_fec_pct_of_diesel_2018",
         f.fact("Fact_I_S_other_paper_diesel_fec_2018")
-        / f.fact("Fact_I_P_other_paper_fec_2018"),
+        / f.fact("Fact_I_S_other_paper_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Diesel an Papierindustrie 2018 (WZ 17)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_paper_diesel_fec_2018/Fact_I_P_other_paper_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_paper_diesel_fec_2018/Fact_I_S_other_paper_fec_2018",
             "reference": "AG EB 2018 Zeile 48",
             "link": "",
         },
@@ -2345,13 +2345,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_paper_fec_pct_of_fueloil_2018",
         f.fact("Fact_I_S_other_paper_fueloil_fec_2018")
-        / f.fact("Fact_I_P_other_paper_fec_2018"),
+        / f.fact("Fact_I_S_other_paper_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV HeizÃ¶l an Papierindustrie 2018 (WZ 17)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_paper_fueloil_fec_2018/Fact_I_P_other_paper_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_paper_fueloil_fec_2018/Fact_I_S_other_paper_fec_2018",
             "reference": "AG EB 2018 Zeile 48",
             "link": "",
         },
@@ -2359,13 +2359,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_paper_fec_pct_of_lpg_2018",
         f.fact("Fact_I_S_other_paper_lpg_fec_2018")
-        / f.fact("Fact_I_P_other_paper_fec_2018"),
+        / f.fact("Fact_I_S_other_paper_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV LPG an Papierindustrie 2018 (WZ 17)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_paper_lpg_fec_2018/Fact_I_P_other_paper_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_paper_lpg_fec_2018/Fact_I_S_other_paper_fec_2018",
             "reference": "AG EB 2018 Zeile 48",
             "link": "",
         },
@@ -2373,13 +2373,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_paper_fec_pct_of_opetpro_2018",
         f.fact("Fact_I_S_other_paper_opetpro_fec_2018")
-        / f.fact("Fact_I_P_other_paper_fec_2018"),
+        / f.fact("Fact_I_S_other_paper_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Sonstige MineralÃ¶lprodukte an Papierindustrie 2018 (WZ 17)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_paper_opetpro_fec_2018/Fact_I_P_other_paper_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_paper_opetpro_fec_2018/Fact_I_S_other_paper_fec_2018",
             "reference": "AG EB 2018 Zeile 48",
             "link": "",
         },
@@ -2387,13 +2387,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_paper_fec_pct_of_gas_2018",
         f.fact("Fact_I_S_other_paper_gas_fec_2018")
-        / f.fact("Fact_I_P_other_paper_fec_2018"),
+        / f.fact("Fact_I_S_other_paper_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Erdgas an Papierindustrie 2018 (WZ 17)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_paper_gas_fec_2018/Fact_I_P_other_paper_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_paper_gas_fec_2018/Fact_I_S_other_paper_fec_2018",
             "reference": "AG EB 2018 Zeile 48",
             "link": "",
         },
@@ -2401,13 +2401,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_paper_fec_pct_of_biomass_2018",
         f.fact("Fact_I_S_other_paper_biomass_fec_2018")
-        / f.fact("Fact_I_P_other_paper_fec_2018"),
+        / f.fact("Fact_I_S_other_paper_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Biomasse an Papierindustrie 2018 (WZ 17)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_paper_biomass_fec_2018/Fact_I_P_other_paper_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_paper_biomass_fec_2018/Fact_I_S_other_paper_fec_2018",
             "reference": "AG EB 2018 Zeile 48",
             "link": "",
         },
@@ -2415,13 +2415,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_paper_fec_pct_of_orenew_2018",
         f.fact("Fact_I_S_other_paper_orenew_fec_2018")
-        / f.fact("Fact_I_P_other_paper_fec_2018"),
+        / f.fact("Fact_I_S_other_paper_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Sonstige EE an Papierindustrie 2018 (WZ 17)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_paper_orenew_fec_2018/Fact_I_P_other_paper_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_paper_orenew_fec_2018/Fact_I_S_other_paper_fec_2018",
             "reference": "AG EB 2018 Zeile 48",
             "link": "",
         },
@@ -2429,13 +2429,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_paper_fec_pct_of_ofossil_2018",
         f.fact("Fact_I_S_other_paper_ofossil_fec_2018")
-        / f.fact("Fact_I_P_other_paper_fec_2018"),
+        / f.fact("Fact_I_S_other_paper_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Sonstige fossile EnergietrÃ¤ger an Papierindustrie 2018 (WZ 17)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_paper_ofossil_fec_2018/Fact_I_P_other_paper_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_paper_ofossil_fec_2018/Fact_I_S_other_paper_fec_2018",
             "reference": "AG EB 2018 Zeile 48",
             "link": "",
         },
@@ -2443,13 +2443,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_paper_fec_pct_of_elec_2018",
         f.fact("Fact_I_S_other_paper_elec_fec_2018")
-        / f.fact("Fact_I_P_other_paper_fec_2018"),
+        / f.fact("Fact_I_S_other_paper_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Strom an Papierindustrie 2018 (WZ 17)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_paper_elec_fec_2018/Fact_I_P_other_paper_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_paper_elec_fec_2018/Fact_I_S_other_paper_fec_2018",
             "reference": "AG EB 2018 Zeile 48",
             "link": "",
         },
@@ -2457,13 +2457,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_paper_fec_pct_of_heatnet_2018",
         f.fact("Fact_I_S_other_paper_heatnet_fec_2018")
-        / f.fact("Fact_I_P_other_paper_fec_2018"),
+        / f.fact("Fact_I_S_other_paper_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV FernwÃ¤rme an Papierindustrie 2018 (WZ 17)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_paper_heatnet_fec_2018/Fact_I_P_other_paper_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_paper_heatnet_fec_2018/Fact_I_S_other_paper_fec_2018",
             "reference": "AG EB 2018 Zeile 48",
             "link": "",
         },
@@ -2471,13 +2471,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_food_fec_pct_of_coal_2018",
         f.fact("Fact_I_S_other_food_coal_fec_2018")
-        / f.fact("Fact_I_P_other_food_fec_2018"),
+        / f.fact("Fact_I_S_other_food_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Kohle an ErnÃ¤hrungsindustrie 2018 (WZ 10 11 12)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_food_coal_fec_2018/Fact_I_P_other_food_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_food_coal_fec_2018/Fact_I_S_other_food_fec_2018",
             "reference": "AG EB 2018 Zeile 47",
             "link": "",
         },
@@ -2485,13 +2485,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_food_fec_pct_of_diesel_2018",
         f.fact("Fact_I_S_other_food_diesel_fec_2018")
-        / f.fact("Fact_I_P_other_food_fec_2018"),
+        / f.fact("Fact_I_S_other_food_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Diesel an ErnÃ¤hrungsindustrie 2018 (WZ 10 11 12)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_food_diesel_fec_2018/Fact_I_P_other_food_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_food_diesel_fec_2018/Fact_I_S_other_food_fec_2018",
             "reference": "AG EB 2018 Zeile 47",
             "link": "",
         },
@@ -2499,13 +2499,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_food_fec_pct_of_fueloil_2018",
         f.fact("Fact_I_S_other_food_fueloil_fec_2018")
-        / f.fact("Fact_I_P_other_food_fec_2018"),
+        / f.fact("Fact_I_S_other_food_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV HeizÃ¶l an ErnÃ¤hrungsindustrie 2018 (WZ 10 11 12)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_food_fueloil_fec_2018/Fact_I_P_other_food_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_food_fueloil_fec_2018/Fact_I_S_other_food_fec_2018",
             "reference": "AG EB 2018 Zeile 47",
             "link": "",
         },
@@ -2513,13 +2513,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_food_fec_pct_of_lpg_2018",
         f.fact("Fact_I_S_other_food_lpg_fec_2018")
-        / f.fact("Fact_I_P_other_food_fec_2018"),
+        / f.fact("Fact_I_S_other_food_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV LPG an ErnÃ¤hrungsindustrie 2018 (WZ 10 11 12)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_food_lpg_fec_2018/Fact_I_P_other_food_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_food_lpg_fec_2018/Fact_I_S_other_food_fec_2018",
             "reference": "AG EB 2018 Zeile 47",
             "link": "",
         },
@@ -2527,13 +2527,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_food_fec_pct_of_opetpro_2018",
         f.fact("Fact_I_S_other_food_opetpro_fec_2018")
-        / f.fact("Fact_I_P_other_food_fec_2018"),
+        / f.fact("Fact_I_S_other_food_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Sonstige MineralÃ¶lprodukte an ErnÃ¤hrungsindustrie 2018 (WZ 10 11 12)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_food_opetpro_fec_2018/Fact_I_P_other_food_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_food_opetpro_fec_2018/Fact_I_S_other_food_fec_2018",
             "reference": "AG EB 2018 Zeile 47",
             "link": "",
         },
@@ -2541,13 +2541,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_food_fec_pct_of_gas_2018",
         f.fact("Fact_I_S_other_food_gas_fec_2018")
-        / f.fact("Fact_I_P_other_food_fec_2018"),
+        / f.fact("Fact_I_S_other_food_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Erdgas an ErnÃ¤hrungsindustrie 2018 (WZ 10 11 12)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_food_gas_fec_2018/Fact_I_P_other_food_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_food_gas_fec_2018/Fact_I_S_other_food_fec_2018",
             "reference": "AG EB 2018 Zeile 47",
             "link": "",
         },
@@ -2555,13 +2555,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_food_fec_pct_of_biomass_2018",
         f.fact("Fact_I_S_other_food_biomass_fec_2018")
-        / f.fact("Fact_I_P_other_food_fec_2018"),
+        / f.fact("Fact_I_S_other_food_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Biomasse an ErnÃ¤hrungsindustrie 2018 (WZ 10 11 12)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_food_biomass_fec_2018/Fact_I_P_other_food_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_food_biomass_fec_2018/Fact_I_S_other_food_fec_2018",
             "reference": "AG EB 2018 Zeile 47",
             "link": "",
         },
@@ -2569,13 +2569,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_food_fec_pct_of_orenew_2018",
         f.fact("Fact_I_S_other_food_orenew_fec_2018")
-        / f.fact("Fact_I_P_other_food_fec_2018"),
+        / f.fact("Fact_I_S_other_food_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Sonstige EE an ErnÃ¤hrungsindustrie 2018 (WZ 10 11 12)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_food_orenew_fec_2018/Fact_I_P_other_food_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_food_orenew_fec_2018/Fact_I_S_other_food_fec_2018",
             "reference": "AG EB 2018 Zeile 47",
             "link": "",
         },
@@ -2583,13 +2583,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_food_fec_pct_of_elec_2018",
         f.fact("Fact_I_S_other_food_elec_fec_2018")
-        / f.fact("Fact_I_P_other_food_fec_2018"),
+        / f.fact("Fact_I_S_other_food_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Strom an ErnÃ¤hrungsindustrie 2018 (WZ 10 11 12)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_food_elec_fec_2018/Fact_I_P_other_food_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_food_elec_fec_2018/Fact_I_S_other_food_fec_2018",
             "reference": "AG EB 2018 Zeile 47",
             "link": "",
         },
@@ -2597,7 +2597,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_food_fec_pct_of_ofossil_2018",
         f.fact("Fact_I_S_other_food_ofossil_fec_2018")
-        / f.fact("Fact_I_P_other_food_fec_2018"),
+        / f.fact("Fact_I_S_other_food_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -2611,13 +2611,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_food_fec_pct_of_heatnet_2018",
         f.fact("Fact_I_S_other_food_heatnet_fec_2018")
-        / f.fact("Fact_I_P_other_food_fec_2018"),
+        / f.fact("Fact_I_S_other_food_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV FernwÃ¤rme an ErnÃ¤hrungsindustrie 2018 (WZ 10 11 12)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_food_heatnet_fec_2018/Fact_I_P_other_food_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_food_heatnet_fec_2018/Fact_I_S_other_food_fec_2018",
             "reference": "AG EB 2018 Zeile 47",
             "link": "",
         },
@@ -2631,7 +2631,7 @@ def calculate_derived_facts(rd: refdata.RefData):
             "group": "ud",
             "description": 'Personalkosten "Bau von StraÃŸen und Bahnverkehrstrecken" (WZ 42.1) pro Person und Jahr 2018',
             "unit": "â‚¬",
-            "rationale": "Fact_B_P_constr_main_wage_2017/Fact_B_P_constr_main_emplo_2017",
+            "rationale": "Fact_B_P_constr_main_wage_2018/Fact_B_P_constr_main_emplo_2018",
             "reference": "destatis 2018 Kostenstruktur der Rechtlichen Einheiten im Baugewerbe S.69/75",
             "link": "",
         },
@@ -3105,7 +3105,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
 
     f.add_derived_fact(
-        "Fact_L_forest_conv_2018",
+        "Fact_L_G_forest_conv_2018",
         f.fact("Fact_L_G_forest_area1_2018")
         * f.fact("Fact_L_G_forest_pct_of_conv_2018"),
         {
@@ -3135,7 +3135,7 @@ def calculate_derived_facts(rd: refdata.RefData):
 
     f.add_derived_fact(
         "Fact_L_G_forest_CO2e_cb_per_ha_2018",
-        f.fact("Fact_L_G_forest_CO2e_cb_2018") / f.fact("Fact_L_forest_conv_2018"),
+        f.fact("Fact_L_G_forest_CO2e_cb_2018") / f.fact("Fact_L_G_forest_conv_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -3287,7 +3287,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_L_G_wood_CO2e_per_ha_2018",
-        f.fact("Fact_L_G_wood_CO2e_DE_2018") / f.fact("Fact_L_forest_conv_2018"),
+        f.fact("Fact_L_G_wood_CO2e_DE_2018") / f.fact("Fact_L_G_forest_conv_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -3568,7 +3568,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_miner_ratio_fec_to_industry_2018",
-        f.fact("Fact_I_P_miner_fec_2018") / f.fact("Fact_I_S_fec_2018"),
+        f.fact("Fact_I_S_miner_fec_2018") / f.fact("Fact_I_S_fec_2018"),
         {
             "note HS": "",
             "group": "ui",
@@ -3580,8 +3580,8 @@ def calculate_derived_facts(rd: refdata.RefData):
         },
     )
     f.add_derived_fact(
-        "Fakt_I_P_miner_cement_CO2e_eb_2018",
-        f.fact("Fakt_I_P_miner_cement_CO2e_eb_2017")
+        "Fact_I_P_miner_cement_CO2e_cb_2018",
+        f.fact("Fact_I_P_miner_cement_CO2e_cb_2017")
         * f.fact("Fact_I_P_miner_CO2e_cb_2018")
         / f.fact("Fact_I_P_miner_CO2e_cb_2015_2017"),
         {
@@ -3640,9 +3640,9 @@ def calculate_derived_facts(rd: refdata.RefData):
         },
     )
     f.add_derived_fact(
-        "Fact_I_P_metal_steel_secondary_CO2e_eb_2018",
-        f.fact("Fact_I_P_metal_steel_CO2e_eb_2018")
-        - f.fact("Fact_I_P_metal_steel_primary_CO2e_eb_2018")
+        "Fact_I_P_metal_steel_secondary_CO2e_cb_2018",
+        f.fact("Fact_I_P_metal_steel_CO2e_cb_2018")
+        - f.fact("Fact_I_P_metal_steel_primary_CO2e_cb_2018")
         - f.fact("Fact_I_P_metal_nonfe_foundries_CO2e_cb_2018"),
         {
             "note HS": "umbenennen zu Fact_I_P_metal_steel_secondary_CO2e_cb_2018",
@@ -3670,7 +3670,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_metal_steel_primary_ratio_CO2e_cb_to_prodvol",
-        f.fact("Fact_I_P_metal_steel_primary_CO2e_eb_2018")
+        f.fact("Fact_I_P_metal_steel_primary_CO2e_cb_2018")
         / f.fact("Fact_I_P_metal_steel_primary_prodvol_2018"),
         {
             "note HS": "",
@@ -3734,9 +3734,9 @@ def calculate_derived_facts(rd: refdata.RefData):
         },
     )
     f.add_derived_fact(
-        "Fakt_I_N_metallh_Primaerroute_EEV_2018",
-        f.fact("Fakt_I_N_metallh_HKR_EEV_2018")
-        + f.fact("Fakt_I_N_metallh_DRI_EEV_2018"),
+        "Fact_I_S_metal_steel_primary_fec_2018",
+        f.fact("Fact_I_S_metal_steel_primary_HKR_fec_2018")
+        + f.fact("Fact_I_S_metal_steel_primary_DRI_fec_2018"),
         {
             "note HS": "umbenennen zu Fact_I_S_metal_steel_primary_fec_2018",
             "group": "ui",
@@ -3749,8 +3749,8 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_metal_fec_pct_of_steel_secondary",
-        f.fact("Fakt_I_N_metallh_Sekundaerroute_EEV_2018")
-        / f.fact("Fakt_I_N_metallh_Stahl_EEV_2018"),
+        f.fact("Fact_I_S_metal_steel_secondary_fec_2018")
+        / f.fact("Fact_I_S_metal_steel_fec_2018"),
         {
             "note HS": "nicht mehr benötigt seit KFI Update, oder?",
             "group": "ud",
@@ -3764,7 +3764,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_secondary_fec_pct_of_diesel_2018",
         f.fact("Fact_I_S_metal_steel_secondary_diesel_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Sekundaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_secondary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -3778,7 +3778,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_secondary_fec_pct_of_fueloil_2018",
         f.fact("Fact_I_S_metal_steel_secondary_fueloil_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Sekundaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_secondary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -3792,7 +3792,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_secondary_fec_pct_of_lpg_2018",
         f.fact("Fact_I_S_metal_steel_secondary_lpg_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Sekundaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_secondary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -3806,7 +3806,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_secondary_fec_pct_of_opetpro_2018",
         f.fact("Fact_I_S_metal_steel_secondary_opetpro_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Sekundaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_secondary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -3820,7 +3820,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_secondary_fec_pct_of_gas_2018",
         f.fact("Fact_I_S_metal_steel_secondary_gas_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Sekundaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_secondary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -3834,7 +3834,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_secondary_fec_pct_of_coal_2018",
         f.fact("Fact_I_S_metal_steel_secondary_coal_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Sekundaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_secondary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -3848,7 +3848,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_secondary_fec_pct_of_biomass_2018",
         f.fact("Fact_I_S_metal_steel_secondary_biomass_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Sekundaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_secondary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -3862,7 +3862,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_secondary_fec_pct_of_orenew_2018",
         f.fact("Fact_I_S_metal_steel_secondary_orenew_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Sekundaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_secondary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -3876,7 +3876,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_secondary_fec_pct_of_ofossil_2018",
         f.fact("Fact_I_S_metal_steel_secondary_ofossil_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Sekundaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_secondary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -3890,7 +3890,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_secondary_fec_pct_of_elec_2018",
         f.fact("Fact_I_S_metal_steel_secondary_elec_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Sekundaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_secondary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -3904,7 +3904,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_secondary_fec_pct_of_heatnet_2018",
         f.fact("Fact_I_S_metal_steel_secondary_heatnet_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Sekundaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_secondary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -4746,8 +4746,8 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_miner_cement_ratio_CO2e_cb_to_prodvol",
-        f.fact("Fakt_I_P_miner_cement_CO2e_eb_2018")
-        / f.fact("Fact_I_P_miner_cement_prodvol_2017"),
+        f.fact("Fact_I_P_miner_cement_CO2e_cb_2018")
+        / f.fact("Fact_I_P_miner_cement_prodvol_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -4802,7 +4802,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_metal_steel_secondary_ratio_CO2e_cb_to_prodvol",
-        f.fact("Fact_I_P_metal_steel_secondary_CO2e_eb_2018")
+        f.fact("Fact_I_P_metal_steel_secondary_CO2e_cb_2018")
         / f.fact("Fact_I_P_metal_steel_secondary_prodvol_2018"),
         {
             "note HS": "",
@@ -4816,8 +4816,8 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_metal_fec_pct_of_steel_primary",
-        f.fact("Fakt_I_N_metallh_Primaerroute_EEV_2018")
-        / f.fact("Fakt_I_N_metallh_Stahl_EEV_2018"),
+        f.fact("Fact_I_S_metal_steel_primary_fec_2018")
+        / f.fact("Fact_I_S_metal_steel_fec_2018"),
         {
             "note HS": "nicht mehr benötigt seit KFI Update, oder?",
             "group": "ud",
@@ -4831,7 +4831,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_primary_fec_pct_of_coal_2018",
         f.fact("Fact_I_S_metal_steel_primary_coal_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Primaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_primary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -4845,7 +4845,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_primary_fec_pct_of_diesel_2018",
         f.fact("Fact_I_S_metal_steel_primary_diesel_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Primaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_primary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -4859,7 +4859,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_primary_fec_pct_of_fueloil_2018",
         f.fact("Fact_I_S_metal_steel_primary_fueloil_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Primaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_primary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -4873,7 +4873,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_primary_fec_pct_of_lpg_2018",
         f.fact("Fact_I_S_metal_steel_primary_lpg_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Primaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_primary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -4887,7 +4887,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_primary_fec_pct_of_opetpro_2018",
         f.fact("Fact_I_S_metal_steel_primary_opetpro_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Primaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_primary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -4901,7 +4901,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_primary_fec_pct_of_gas_2018",
         f.fact("Fact_I_S_metal_steel_primary_gas_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Primaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_primary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -4915,7 +4915,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_primary_fec_pct_of_biomass_2018",
         f.fact("Fact_I_S_metal_steel_primary_biomass_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Primaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_primary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -4929,7 +4929,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_primary_fec_pct_of_orenew_2018",
         f.fact("Fact_I_S_metal_steel_primary_orenew_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Primaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_primary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -4943,7 +4943,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_primary_fec_pct_of_ofossil_2018",
         f.fact("Fact_I_S_metal_steel_primary_ofossil_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Primaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_primary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -4957,7 +4957,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_primary_fec_pct_of_elec_2018",
         f.fact("Fact_I_S_metal_steel_primary_elec_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Primaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_primary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -4971,7 +4971,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_metal_steel_primary_fec_pct_of_heatnet_2018",
         f.fact("Fact_I_S_metal_steel_primary_heatnet_fec_2018")
-        / f.fact("Fakt_I_N_metallh_Primaerroute_EEV_2018"),
+        / f.fact("Fact_I_S_metal_steel_primary_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -4998,13 +4998,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_L_G_forest_conv_CO2e_per_ha_2018",
-        f.fact("Fact_L_G_forest_conv_CO2e_2018") / f.fact("Fact_L_forest_conv_2018"),
+        f.fact("Fact_L_G_forest_conv_CO2e_2018") / f.fact("Fact_L_G_forest_conv_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Wald herkÃ¶mmlich bewirtscahftet",
             "unit": "",
-            "rationale": "Berechnung: =Fact_L_G_forest_conv_CO2e_2018/Fact_L_forest_conv_2018",
+            "rationale": "Berechnung: =Fact_L_G_forest_conv_CO2e_2018/Fact_L_G_forest_conv_2018",
             "reference": "",
             "link": "",
         },
@@ -5267,9 +5267,9 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
 
     f.add_derived_fact(
-        "Fact_I_P_metal_fec_2018",
-        f.fact("Fakt_I_N_metallh_Stahl_EEV_2018")
-        + f.fact("Fact_I_P_metal_nonfe_fec_2018"),
+        "Fact_I_S_metal_fec_2018",
+        f.fact("Fact_I_S_metal_steel_fec_2018")
+        + f.fact("Fact_I_S_metal_nonfe_fec_2018"),
         {
             "note HS": "umbenennen zu Fact_I_S_metal_fec_2018",
             "group": "ui",
@@ -5283,7 +5283,7 @@ def calculate_derived_facts(rd: refdata.RefData):
 
     f.add_derived_fact(
         "Fact_I_P_fec_pct_of_metal_2018",
-        f.fact("Fact_I_P_metal_fec_2018") / f.fact("Fact_I_S_fec_2018"),
+        f.fact("Fact_I_S_metal_fec_2018") / f.fact("Fact_I_S_fec_2018"),
         {
             "note HS": "",
             "group": "ui",
@@ -5297,7 +5297,7 @@ def calculate_derived_facts(rd: refdata.RefData):
 
     f.add_derived_fact(
         "Fact_I_P_metal_fec_pct_of_steel",
-        f.fact("Fakt_I_N_metallh_Stahl_EEV_2018") / f.fact("Fact_I_P_metal_fec_2018"),
+        f.fact("Fact_I_S_metal_steel_fec_2018") / f.fact("Fact_I_S_metal_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -5310,7 +5310,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_metal_fec_pct_of_nonfe",
-        f.fact("Fact_I_P_metal_nonfe_fec_2018") / f.fact("Fact_I_P_metal_fec_2018"),
+        f.fact("Fact_I_S_metal_nonfe_fec_2018") / f.fact("Fact_I_S_metal_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
@@ -5323,11 +5323,11 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
 
     f.add_derived_fact(
-        "Fact_I_P_other_fec_2018",
+        "Fact_I_S_other_fec_2018",
         f.fact("Fact_I_S_fec_2018")
         - f.fact("Fact_I_S_chem_all_fec_2018")
-        - f.fact("Fact_I_P_miner_fec_2018")
-        - f.fact("Fact_I_P_metal_fec_2018"),
+        - f.fact("Fact_I_S_miner_fec_2018")
+        - f.fact("Fact_I_S_metal_fec_2018"),
         {
             "note HS": "umbenennen zu Fact_I_S_other_fec_2018",
             "group": "ui",
@@ -5751,7 +5751,7 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_other_ratio_fec_to_industry_2018",
-        f.fact("Fact_I_P_other_fec_2018") / f.fact("Fact_I_S_fec_2018"),
+        f.fact("Fact_I_S_other_fec_2018") / f.fact("Fact_I_S_fec_2018"),
         {
             "note HS": "nicht mehr benötigt seit KFI Update, oder?",
             "group": "ui (Eingabe)",
@@ -5764,26 +5764,26 @@ def calculate_derived_facts(rd: refdata.RefData):
     )
     f.add_derived_fact(
         "Fact_I_P_other_fec_pct_of_paper",
-        f.fact("Fact_I_P_other_paper_fec_2018") / f.fact("Fact_I_P_other_fec_2018"),
+        f.fact("Fact_I_S_other_paper_fec_2018") / f.fact("Fact_I_S_other_fec_2018"),
         {
             "note HS": "nicht mehr benötigt seit KFI Update, oder?",
             "group": "ud",
             "description": "Anteil EEV Papierindustrie 2018 (WZ 17) an Sonstige Industrie",
             "unit": "%",
-            "rationale": "Division von Fact_I_P_other_paper_fec_2018/Fact_I_P_other_fec_2018",
+            "rationale": "Division von Fact_I_S_other_paper_fec_2018/Fact_I_S_other_fec_2018",
             "reference": "AG EB 2018 Zeile 48 Spalte AI",
             "link": "",
         },
     )
     f.add_derived_fact(
         "Fact_I_P_other_fec_pct_of_food",
-        f.fact("Fact_I_P_other_food_fec_2018") / f.fact("Fact_I_P_other_fec_2018"),
+        f.fact("Fact_I_S_other_food_fec_2018") / f.fact("Fact_I_S_other_fec_2018"),
         {
             "note HS": "nicht mehr benötigt seit KFI Update, oder?",
             "group": "ud",
             "description": "Anteil EEV ErnÃ¤hrungsindustrie 2018 (WZ 10, 11, 12) an Sonstige Industrie",
             "unit": "%",
-            "rationale": "Division von Fact_I_P_other_food_fec_2018/Fact_I_P_other_fec_2018",
+            "rationale": "Division von Fact_I_S_other_food_fec_2018/Fact_I_S_other_fec_2018",
             "reference": "AG EB 2018 Zeile 47 Spalte AI",
             "link": "",
         },
@@ -5804,16 +5804,16 @@ def calculate_derived_facts(rd: refdata.RefData):
         },
     )
     f.add_derived_fact(
-        "Fact_I_P_other_further_fec_2018",
-        f.fact("Fact_I_P_other_fec_2018")
-        - f.fact("Fact_I_P_other_paper_fec_2018")
-        - f.fact("Fact_I_P_other_food_fec_2018"),
+        "Fact_I_S_other_further_fec_2018",
+        f.fact("Fact_I_S_other_fec_2018")
+        - f.fact("Fact_I_S_other_paper_fec_2018")
+        - f.fact("Fact_I_S_other_food_fec_2018"),
         {
             "note HS": "umbenennen zu Fact_I_S_other_further_fec_2018",
             "group": "ui",
             "description": "EEV Weitere Branchen 2021 (WZ  8, 22, 24.2, 24.3, 25, 28 ohne 28.23, 29, 30, alle anderen WZ ohne 5.1, 5.2, 6, 9, 19.1 ,19.2)",
             "unit": "",
-            "rationale": "Von dem gesamten EEV von sonstiger Industrie wurden die EEV von Papier- und ErnÃ¤hrungsindustrie abgezogen. =Fact_I_P_other_fec_2018-Fact_I_P_other_paper_fec_2018-Fact_I_P_other_food_fec_2018",
+            "rationale": "Von dem gesamten EEV von sonstiger Industrie wurden die EEV von Papier- und ErnÃ¤hrungsindustrie abgezogen. =Fact_I_S_other_fec_2018-Fact_I_S_other_paper_fec_2018-Fact_I_S_other_food_fec_2018",
             "reference": "AG EB 2018 Zeile 46, 51, 56,57, 58, 59 Spalte AI",
             "link": "",
         },
@@ -5821,13 +5821,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_further_fec_pct_of_coal_2018",
         f.fact("Fact_I_S_other_further_coal_fec_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Kohle an Weitere Branchen 2018 (WZ 8 22 24.2 24.3 25 28 ohne 28.23 29 30 alle anderen WZ ohne 5.1 5.2 6 9 19.1 19.2)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_further_coal_fec_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_further_coal_fec_2018/Fact_I_S_other_further_fec_2018",
             "reference": "AG EB 2018 Zeile 46+51+56+57+58+59",
             "link": "",
         },
@@ -5835,13 +5835,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_further_fec_pct_of_diesel_2018",
         f.fact("Fact_I_S_other_further_diesel_fec_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Diesel an Weitere Branchen 2018 (WZ 8 22 24.2 24.3 25 28 ohne 28.23 29 30 alle anderen WZ ohne 5.1 5.2 6 9 19.1 19.2)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_further_diesel_fec_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_further_diesel_fec_2018/Fact_I_S_other_further_fec_2018",
             "reference": "AG EB 2018 Zeile 46+51+56+57+58+59",
             "link": "",
         },
@@ -5849,13 +5849,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_further_fec_pct_of_fueloil_2018",
         f.fact("Fact_I_S_other_further_fueloil_fec_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV HeizÃ¶l an Weitere Branchen 2018 (WZ 8 22 24.2 24.3 25 28 ohne 28.23 29 30 alle anderen WZ ohne 5.1 5.2 6 9 19.1 19.2)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_further_fueloil_fec_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_further_fueloil_fec_2018/Fact_I_S_other_further_fec_2018",
             "reference": "AG EB 2018 Zeile 46+51+56+57+58+59",
             "link": "",
         },
@@ -5863,13 +5863,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_further_fec_pct_of_lpg_2018",
         f.fact("Fact_I_S_other_further_lpg_fec_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV LPG an Weitere Branchen 2018 (WZ 8 22 24.2 24.3 25 28 ohne 28.23 29 30 alle anderen WZ ohne 5.1 5.2 6 9 19.1 19.2)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_further_lpg_fec_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_further_lpg_fec_2018/Fact_I_S_other_further_fec_2018",
             "reference": "AG EB 2018 Zeile 46+51+56+57+58+59",
             "link": "",
         },
@@ -5877,13 +5877,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_further_fec_pct_of_opetpro_2018",
         f.fact("Fact_I_S_other_further_opetpro_fec_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Sonstige MineralÃ¶lprodukte an Weitere Branchen 2018 (WZ 8 22 24.2 24.3 25 28 ohne 28.23 29 30 alle anderen WZ ohne 5.1 5.2 6 9 19.1 19.2)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_further_opetpro_fec_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_further_opetpro_fec_2018/Fact_I_S_other_further_fec_2018",
             "reference": "AG EB 2018 Zeile 46+51+56+57+58+59",
             "link": "",
         },
@@ -5891,13 +5891,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_further_fec_pct_of_gas_2018",
         f.fact("Fact_I_S_other_further_gas_fec_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Erdgas an Weitere Branchen 2018 (WZ 8 22 24.2 24.3 25 28 ohne 28.23 29 30 alle anderen WZ ohne 5.1 5.2 6 9 19.1 19.2)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_further_gas_fec_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_further_gas_fec_2018/Fact_I_S_other_further_fec_2018",
             "reference": "AG EB 2018 Zeile 46+51+56+57+58+59",
             "link": "",
         },
@@ -5905,13 +5905,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_further_fec_pct_of_biomass_2018",
         f.fact("Fact_I_S_other_further_biomass_fec_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Biomasse an Weitere Branchen 2018 (WZ 8 22 24.2 24.3 25 28 ohne 28.23 29 30 alle anderen WZ ohne 5.1 5.2 6 9 19.1 19.2)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_further_biomass_fec_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_further_biomass_fec_2018/Fact_I_S_other_further_fec_2018",
             "reference": "AG EB 2018 Zeile 46+51+56+57+58+59",
             "link": "",
         },
@@ -5919,13 +5919,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_further_fec_pct_of_orenew_2018",
         f.fact("Fact_I_S_other_further_orenew_fec_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Sonstige EE an Weitere Branchen 2018 (WZ 8 22 24.2 24.3 25 28 ohne 28.23 29 30 alle anderen WZ ohne 5.1 5.2 6 9 19.1 19.2)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_further_orenew_fec_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_further_orenew_fec_2018/Fact_I_S_other_further_fec_2018",
             "reference": "AG EB 2018 Zeile 46+51+56+57+58+59",
             "link": "",
         },
@@ -5933,13 +5933,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_further_fec_pct_of_ofossil_2018",
         f.fact("Fact_I_S_other_further_ofossil_fec_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Sonstige fossile EnergietrÃ¤ger an Weitere Branchen 2018 (WZ 8 22 24.2 24.3 25 28 ohne 28.23 29 30 alle anderen WZ ohne 5.1 5.2 6 9 19.1 19.2)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_further_ofossil_fec_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_further_ofossil_fec_2018/Fact_I_S_other_further_fec_2018",
             "reference": "AG EB 2018 Zeile 46+51+56+57+58+59",
             "link": "",
         },
@@ -5947,13 +5947,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_further_fec_pct_of_elec_2018",
         f.fact("Fact_I_S_other_further_elec_fec_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV Strom an Weitere Branchen 2018 (WZ 8 22 24.2 24.3 25 28 ohne 28.23 29 30 alle anderen WZ ohne 5.1 5.2 6 9 19.1 19.2)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_further_elec_fec_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_further_elec_fec_2018/Fact_I_S_other_further_fec_2018",
             "reference": "AG EB 2018 Zeile 46+51+56+57+58+59",
             "link": "",
         },
@@ -5961,13 +5961,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_S_other_further_fec_pct_of_heatnet_2018",
         f.fact("Fact_I_S_other_further_heatnet_fec_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Anteil EEV FernwÃ¤rme an Weitere Branchen 2018 (WZ 8 22 24.2 24.3 25 28 ohne 28.23 29 30 alle anderen WZ ohne 5.1 5.2 6 9 19.1 19.2)",
             "unit": "%",
-            "rationale": "Berechnung =Fact_I_P_other_further_heatnet_fec_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Berechnung =Fact_I_P_other_further_heatnet_fec_2018/Fact_I_S_other_further_fec_2018",
             "reference": "AG EB 2018 Zeile 46+51+56+57+58+59",
             "link": "",
         },
@@ -5975,14 +5975,14 @@ def calculate_derived_facts(rd: refdata.RefData):
 
     f.add_derived_fact(
         "Fact_I_P_other_further_ratio_CO2e_pb_to_fec",
-        f.fact("Fact_I_P_other_2d_CO2e_pb_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        f.fact("Fact_I_P_other_further_CO2e_pb_2018")
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Ratio pb CO2e (CRF 2.D) to fec further industry 2018",
             "unit": "t/MWh",
-            "rationale": "Da keine zuverlÃ¤ssigen Zahlen Ã¼ber die Produktionsmenge weiterer Branchen vorliegen, muss hier auf den EEV zurÃ¼ckgegriffen werden, also Divsion von Fact_I_P_other_2d_CO2e_pb_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Da keine zuverlÃ¤ssigen Zahlen Ã¼ber die Produktionsmenge weiterer Branchen vorliegen, muss hier auf den EEV zurÃ¼ckgegriffen werden, also Divsion von Fact_I_P_other_further_CO2e_pb_2018/Fact_I_S_other_further_fec_2018",
             "reference": "UBA RESCUE 2019 S. 280",
             "link": "",
         },
@@ -5990,26 +5990,26 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_P_other_2efgh_ratio_CO2e_pb_to_fec",
         f.fact("Fact_I_P_other_2efgh_CO2e_pb_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Ratio pb CO2e (f-gases, CRF 2.E-H) to fec further industry 2018",
             "unit": "t/MWh",
-            "rationale": "Da keine zuverlÃ¤ssigen Zahlen Ã¼ber die Produktionsmenge weiterer Branchen vorliegen, muss hier auf den EEV zurÃ¼ckgegriffen werden, also Divsion von Fact_I_P_other_2efgh_CO2e_pb_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Da keine zuverlÃ¤ssigen Zahlen Ã¼ber die Produktionsmenge weiterer Branchen vorliegen, muss hier auf den EEV zurÃ¼ckgegriffen werden, also Divsion von Fact_I_P_other_2efgh_CO2e_pb_2018/Fact_I_S_other_further_fec_2018",
             "reference": "UBA RESCUE 2019 S. 280",
             "link": "",
         },
     )
     f.add_derived_fact(
         "Fact_I_P_other_fec_pct_of_further",
-        f.fact("Fact_I_P_other_further_fec_2018") / f.fact("Fact_I_P_other_fec_2018"),
+        f.fact("Fact_I_S_other_further_fec_2018") / f.fact("Fact_I_S_other_fec_2018"),
         {
             "note HS": "umbenennen zu Fact_I_S_other_fec_pct_of_further",
             "group": "ud",
             "description": "Anteil EEV Weitere Branchen 2018 an Sonstige Industrie",
             "unit": "%",
-            "rationale": "Division von Fact_I_P_other_further_fec_2018/Fact_I_P_other_fec_2018",
+            "rationale": "Division von Fact_I_S_other_further_fec_2018/Fact_I_S_other_fec_2018",
             "reference": "AG EB 2018 Zeile 46, 51, 56,57, 58, 59 Spalte AI",
             "link": "",
         },
@@ -6017,13 +6017,13 @@ def calculate_derived_facts(rd: refdata.RefData):
     f.add_derived_fact(
         "Fact_I_P_other_further_ratio_CO2e_cb_to_fec",
         f.fact("Fact_I_P_other_further_CO2e_cb_2018")
-        / f.fact("Fact_I_P_other_further_fec_2018"),
+        / f.fact("Fact_I_S_other_further_fec_2018"),
         {
             "note HS": "",
             "group": "ud",
             "description": "Ratio cb CO2e to fec further industry 2018",
             "unit": "t/MWh",
-            "rationale": "Da keine zuverlÃ¤ssigen Zahlen Ã¼ber die Produktionsmenge weiterer Branchen vorliegen, muss hier auf den EEV zurÃ¼ckgegriffen werden, also Divsion von Fact_I_P_other_further_CO2e_cb_2018/Fact_I_P_other_further_fec_2018",
+            "rationale": "Da keine zuverlÃ¤ssigen Zahlen Ã¼ber die Produktionsmenge weiterer Branchen vorliegen, muss hier auf den EEV zurÃ¼ckgegriffen werden, also Divsion von Fact_I_P_other_further_CO2e_cb_2018/Fact_I_S_other_further_fec_2018",
             "reference": "UBA RESCUE 2019 S. 280",
             "link": "",
         },

@@ -90,7 +90,7 @@ def make_entries(
     r_buildings_2005_2008 = data_buildings_com.float("buildings_2005_2008")
     r_buildings_2009_2011 = data_buildings_com.float("buildings_2009_2011")
     r_buildings_2011_today = (
-        data.fact("Fact_R_P_newbuilt_2011_2018")
+        data.fact("Fact_R_P_newbuilt_2011_year_ref")
         * m_population_com_2018
         / m_population_nat
     )
@@ -108,7 +108,7 @@ def make_entries(
         + r_buildings_2011_today
     )
     r_buildings_nat = data.buildings(ags_germany).float("buildings_total") + data.fact(
-        "Fact_R_P_newbuilt_2011_2018"
+        "Fact_R_P_newbuilt_2011_year_ref"
     )
 
     r_flats_com = data_buildings_com.float("flats_total")
@@ -495,7 +495,9 @@ def make_entries(
         co2e = n2o * 298.0
         return co2e / area
 
-    farmland_area_total_sta = m_area_agri_sta * data.fact("Fact_L_G_factor_crop")
+    farmland_area_total_sta = m_area_agri_sta * data.fact(
+        "Fact_L_G_area_veg_agri_pct_of_crop"
+    )
     a_soil_fertilizer_ratio_CO2e_to_ha = compute_efactor_from_n2o(
         "fertilizer_mineral", farmland_area_total_sta
     )
@@ -509,11 +511,11 @@ def make_entries(
         "fermentation_ecrop", farmland_area_total_sta
     )
     greenland_area_total_sta = (
-        m_area_agri_sta * data.fact("Fact_L_G_factor_crop_to_grass")
+        m_area_agri_sta * data.fact("Fact_L_G_area_veg_agri_pct_of_grass")
         + data_area_sta.float("veg_heath")
         + data_area_sta.float("veg_marsh")
         + data_area_sta.float("veg_plant_uncover_com")
-        * data.fact("Fact_L_G_factor_grass_strict")
+        * data.fact("Fact_L_G_area_plant_uncover_pct_grass")
     )
     a_soil_crazing_ratio_CO2e_to_ha = compute_efactor_from_n2o(
         "pasturage", greenland_area_total_sta
@@ -527,7 +529,7 @@ def make_entries(
     )
     farmland_area_organic_germany = (
         m_area_agri_nat
-        * data.fact("Fact_L_G_factor_crop")
+        * data.fact("Fact_L_G_area_veg_agri_pct_of_crop")
         * (
             data.fact("Fact_L_G_fraction_org_soil_fen_crop")
             + data.fact("Fact_L_G_fraction_org_soil_bog_crop")

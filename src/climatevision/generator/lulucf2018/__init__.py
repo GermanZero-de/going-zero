@@ -74,7 +74,9 @@ def calc(entries: Entries, facts: Facts) -> L18:
     )
     g_forest_managed.pct_x = fact("Fact_L_G_forest_pct_of_conv_2018")
 
-    g_crop.area_ha = entries.m_area_agri_com * fact("Fact_L_G_factor_crop")
+    g_crop.area_ha = entries.m_area_agri_com * fact(
+        "Fact_L_G_area_veg_agri_pct_of_crop"
+    )
     g_crop_min_conv.CO2e_production_based_per_t = fact(
         "Fact_L_G_crop_minrl_soil_ord_CO2e_per_ha_2018"
     )
@@ -111,8 +113,9 @@ def calc(entries: Entries, facts: Facts) -> L18:
     g_crop_min_conv.area_ha = g_crop.area_ha * g_crop_min_conv.pct_x
 
     g_grass.area_ha = (
-        entries.m_area_agri_com * fact("Fact_L_G_factor_crop_to_grass")
-        + entries.m_area_veg_plant_uncover_com * fact("Fact_L_G_factor_grass_strict")
+        entries.m_area_agri_com * fact("Fact_L_G_area_veg_agri_pct_of_grass")
+        + entries.m_area_veg_plant_uncover_com
+        * fact("Fact_L_G_area_plant_uncover_pct_grass")
         + entries.m_area_veg_heath_com
         + entries.m_area_veg_marsh_com
     )
@@ -168,8 +171,8 @@ def calc(entries: Entries, facts: Facts) -> L18:
 
     g_grove.area_ha = entries.m_area_veg_wood_com
     # g_grove.area_ha = (
-    #    entries.m_area_agri_com * fact("Fact_L_G_factor_crop_to_grass")
-    #    + entries.m_area_veg_plant_uncover_com * fact("Fact_L_G_factor_grass_strict")
+    #    entries.m_area_agri_com * fact("Fact_L_G_area_veg_agri_pct_of_grass")
+    #    + entries.m_area_veg_plant_uncover_com * fact("Fact_L_G_area_plant_uncover_pct_grass")
     #    + entries.m_area_veg_heath_com
     #    + entries.m_area_veg_marsh_com
     # )
@@ -216,7 +219,7 @@ def calc(entries: Entries, facts: Facts) -> L18:
     g_grass_org.area_ha = g_grass_org_low.area_ha + g_grass_org_high.area_ha
     g_grove_min.area_ha = g_grove.area_ha * g_grove_min.pct_x
     g_wet.area_ha = entries.m_area_veg_moor_com + entries.m_area_water_com * fact(
-        "Fact_L_G_factor_wetland_peat"
+        "Fact_L_G_area_water_pct_of_wet"
     )
     g_wet_min.CO2e_production_based_per_t = fact(
         "Fact_L_G_wetland_peat_minrl_soil_ord_CO2e_per_ha_2018"
@@ -255,7 +258,9 @@ def calc(entries: Entries, facts: Facts) -> L18:
     g_grove_org.area_ha = g_grove_org_low.area_ha + g_grove_org_high.area_ha
     g_wet_min.area_ha = g_wet.area_ha * g_wet_min.pct_x
 
-    g_water.area_ha = entries.m_area_water_com * fact("Fact_L_G_factor_wetland_water")
+    g_water.area_ha = entries.m_area_water_com * fact(
+        "Fact_L_G_area_water_pct_of_water"
+    )
 
     g_water_min.CO2e_production_based_per_t = fact(
         "Fact_L_G_wetland_water_minrl_soil_ord_CO2e_per_ha_2018"
@@ -338,7 +343,7 @@ def calc(entries: Entries, facts: Facts) -> L18:
     g_water_org.CO2e_total = g_water_org.CO2e_production_based
     g_settlement_min.area_ha = g_settlement.area_ha * g_settlement_min.pct_x
     g_other.area_ha = entries.m_area_veg_plant_uncover_com * fact(
-        "Fact_L_G_factor_other"
+        "Fact_L_G_area_plant_uncover_pct_other"
     )
     g_other.CO2e_production_based_per_t = fact(
         "Fact_L_G_other_minrl_soil_CO2e_per_ha_2018"

@@ -161,7 +161,7 @@ class Pyrolysis:
         invest_per_x = ass("Ass_L_P_pyrolysis_plant_ratio_invest_to_biochar_pa")
         invest = prod_volume * invest_per_x
         invest_pa = div(invest, duration_until_target_year)
-        pct_of_wage = fact("Fact_B_P_constr_main_revenue_pct_of_wage_2017")
+        pct_of_wage = fact("Fact_B_P_constr_main_revenue_pct_of_wage_2018")
         cost_wage = invest_pa * pct_of_wage
 
         ratio_wage_to_emplo = fact("Fact_B_P_constr_main_ratio_wage_to_emplo_2017")

@@ -711,7 +711,7 @@ def make_entry(ags: str, year: int):
     entry["In_R_buildings_2005_2008"] = data_buildings_com.float("buildings_2005_2008")
     entry["In_R_buildings_2009_2011"] = data_buildings_com.float("buildings_2009_2011")
     entry["In_R_buildings_2011_today"] = (
-        fact("Fact_R_P_newbuilt_2011_2018")
+        fact("Fact_R_P_newbuilt_2011_year_ref")
         * entry["In_M_population_com_2018"]
         / entry["In_M_population_nat"]
     )
@@ -730,7 +730,7 @@ def make_entry(ags: str, year: int):
     )
     entry["In_R_buildings_nat"] = data.buildings(ags_germany).float(
         "buildings_total"
-    ) + fact("Fact_R_P_newbuilt_2011_2018")
+    ) + fact("Fact_R_P_newbuilt_2011_year_ref")
 
     entry["In_R_flats_com"] = data_buildings_com.float("flats_total")
     entry["In_R_flats_w_heatnet"] = data_buildings_com.float("flats_heatnet")
@@ -1185,7 +1185,9 @@ def make_entry(ags: str, year: int):
         co2e = n2o * 298.0
         return co2e / area
 
-    farmland_area_total_sta = entry["In_M_area_agri_sta"] * fact("Fact_L_G_factor_crop")
+    farmland_area_total_sta = entry["In_M_area_agri_sta"] * fact(
+        "Fact_L_G_area_veg_agri_pct_of_crop"
+    )
     entry["In_A_soil_fertilizer_ratio_CO2e_to_ha"] = compute_efactor_from_n2o(
         "fertilizer_mineral", farmland_area_total_sta
     )
@@ -1199,11 +1201,11 @@ def make_entry(ags: str, year: int):
         "fermentation_ecrop", farmland_area_total_sta
     )
     greenland_area_total_sta = (
-        entry["In_M_area_agri_sta"] * fact("Fact_L_G_factor_crop_to_grass")
+        entry["In_M_area_agri_sta"] * fact("Fact_L_G_area_veg_agri_pct_of_grass")
         + data_area_sta.float("veg_heath")
         + data_area_sta.float("veg_marsh")
         + data_area_sta.float("veg_plant_uncover_com")
-        * fact("Fact_L_G_factor_grass_strict")
+        * fact("Fact_L_G_area_plant_uncover_pct_grass")
     )
     entry["In_A_soil_crazing_ratio_CO2e_to_ha"] = compute_efactor_from_n2o(
         "pasturage", greenland_area_total_sta
@@ -1217,7 +1219,7 @@ def make_entry(ags: str, year: int):
     )
     farmland_area_organic_germany = (
         entry["In_M_area_agri_nat"]
-        * fact("Fact_L_G_factor_crop")
+        * fact("Fact_L_G_area_veg_agri_pct_of_crop")
         * (
             fact("Fact_L_G_fraction_org_soil_fen_crop")
             + fact("Fact_L_G_fraction_org_soil_bog_crop")

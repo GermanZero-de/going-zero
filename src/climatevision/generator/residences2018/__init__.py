@@ -397,11 +397,15 @@ def calc(entries: Entries, facts: Facts) -> R18:
     )
 
     # CO2e_cb_per_MWh
-    s_lpg.CO2e_combustion_based_per_MWh = fact("Fact_H_P_LPG_cb_EF")
-    s_fueloil.CO2e_combustion_based_per_MWh = fact("Fact_H_P_fueloil_cb_EF")
-    s_biomass.CO2e_combustion_based_per_MWh = fact("Fact_RB_S_biomass_CO2e_EF")
-    s_coal.CO2e_combustion_based_per_MWh = fact("Fact_R_S_coal_CO2e_EF")
-    s_petrol.CO2e_combustion_based_per_MWh = fact("Fact_H_P_petrol_cb_EF")
+    s_lpg.CO2e_combustion_based_per_MWh = fact("Fact_RB_S_LPG_ratio_CO2e_to_fec")
+    s_fueloil.CO2e_combustion_based_per_MWh = fact(
+        "Fact_RB_S_fueloil_ratio_CO2e_to_fec"
+    )
+    s_biomass.CO2e_combustion_based_per_MWh = fact(
+        "Fact_RB_S_biomass_ratio_CO2e_to_fec"
+    )
+    s_coal.CO2e_combustion_based_per_MWh = fact("Fact_RB_S_coal_ratio_CO2e_to_fec")
+    s_petrol.CO2e_combustion_based_per_MWh = fact("Fact_RB_S_petrol_ratio_CO2e_to_fec")
     s_heatnet.CO2e_combustion_based_per_MWh = fact(
         "Fact_RB_S_heatnet_ratio_CO2e_to_fec"
     )
@@ -411,7 +415,7 @@ def calc(entries: Entries, facts: Facts) -> R18:
     s_heatpump.CO2e_combustion_based_per_MWh = fact(
         "Fact_RB_S_heatpump_ratio_CO2e_to_fec"
     )
-    s_gas.CO2e_combustion_based_per_MWh = fact("Fact_H_P_ngas_cb_EF")
+    s_gas.CO2e_combustion_based_per_MWh = fact("Fact_RB_S_gas_ratio_CO2e_to_fec")
     s_elec.CO2e_combustion_based_per_MWh = fact("Fact_RB_S_elec_ratio_CO2e_to_fec")
     s_elec_heating.CO2e_combustion_based_per_MWh = fact(
         "Fact_RB_S_elec_ratio_CO2e_to_fec"
