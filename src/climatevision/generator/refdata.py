@@ -489,7 +489,7 @@ def filename(year_ref: int, what: str) -> str:
             "nat_organic_agri": "2020",  # FINISHED
             "nat_res_buildings": "2018",  # WE ARE USING THIS UNCHANGED (ONLY STATES AND NO NEW DATA)
             "population": "2021",  # FINISHED
-            "renewable_energy": "2023",  # FINISHED
+            "renewable_energy": "2024",  # FINISHED
             "traffic": "2021",  # AGS TRANSPLANT 2018 to 2021 FINISHED
             "traffic_air": "2021",  # AGS TRANSPLANT 2018 to 2021 FINISHED
             "traffic_rail": "2021",  # AGS TRANSPLANT 2018 to 2021 FINISHED
